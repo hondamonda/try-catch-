@@ -1,0 +1,54 @@
+# try-catch-
+
+11.	Въвеждане на четно число (с обработка на грешен вход)
+Напишете програма, която въвежда четно число. Ако потребителят въведе грешно число (нечетно число или стринг, който не е цяло число), трябва да му излиза съобщение за грешка и да въвежда отново. Примери:
+вход / изход
+
+Enter even number: 34
+Even number entered: 34
+Enter even number: 35
+The number is not even.
+Enter even number: hello
+Invalid number!
+Enter even number: 12.85
+Invalid number!
+Enter even number: 3464232636536513
+Invalid number!
+Enter even number: 8
+Even number entered: 8
+Тествайте решението си в judge системата: https://judge.softuni.bg/Contests/Practice/Index/156#10.
+Подсказки:
+•	В цикъл въвеждайте число и проверявайте дали е четно. При коректно число излезте от цикъла.
+•	С try { … } catch { … } конструкция прихванете грешните числа, които не могат да се обърнат в int.
+
+-------------------------------------------------------------------------------------------------------------
+
+package zad;
+
+import java.util.Scanner;
+
+public class Zad {
+
+	  public static void main(String[] args) {
+		  
+		 Scanner scan = new Scanner(System.in);
+		 while(true) {
+		 try { 
+			 System.out.println("Enter even number: ");
+			 int a = Integer.parseInt(scan.nextLine());
+			 if( a % 2 == 0) {
+				 System.out.printf("Even number entered: %d", a);break; 
+			 }else {
+				 System.out.println("The number is not even."); 
+			 }
+		 }
+		 catch(NumberFormatException ex) {
+			 System.out.println("Invalid number!");
+		 }
+		
+		}
+		
+	}
+ }
+
+
